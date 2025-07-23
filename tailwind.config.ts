@@ -115,11 +115,6 @@ export default {
 				'float': 'float 3s ease-in-out infinite',
 				'pulse-primary': 'pulse-primary 2s infinite'
 			},
-			backgroundImage: {
-				'gradient-primary': 'var(--gradient-primary)',
-				'gradient-secondary': 'var(--gradient-secondary)',
-				'gradient-accent': 'var(--gradient-accent)'
-			},
 			boxShadow: {
 				'primary': 'var(--shadow-primary)',
 				'card': 'var(--shadow-card)',

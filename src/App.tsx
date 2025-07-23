@@ -7,7 +7,7 @@ import Index from "./pages/Index";
 import StudentDashboard from "./pages/student/Dashboard";
 import ProfessorDashboard from "./pages/professor/Dashboard";
 import Quests from "./pages/student/Quests";
-import ColorGame from "./pages/student/ColorGame";
+
 import Badges from "./pages/student/Badges";
 import Leaderboard from "./pages/student/Leaderboard";
 import Profile from "./pages/shared/Profile";
@@ -30,7 +30,6 @@ const App = () => (
           {/* Student Routes */}
           <Route path="/student/dashboard" element={<StudentDashboard />} />
           <Route path="/student/quests" element={<Quests />} />
-          <Route path="/student/color-game" element={<ColorGame />} />
           <Route path="/student/badges" element={<Badges />} />
           <Route path="/student/leaderboard" element={<Leaderboard />} />
           

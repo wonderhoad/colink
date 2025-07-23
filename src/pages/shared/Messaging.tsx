@@ -150,11 +150,11 @@ const Messaging = () => {
             </Button>
           </Link>
           <div>
-            <h1 className="text-3xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              Messages 💬
+            <h1 className="text-3xl font-bold text-primary">
+              {isStudent ? "Messages 💬" : "Motivate Students 💪"}
             </h1>
             <p className="text-muted-foreground">
-              {isStudent ? "Communicate with your professors" : "Communicate with your students"}
+              {isStudent ? "Communicate with your professors" : "Send motivation and guidance to students"}
             </p>
           </div>
         </div>

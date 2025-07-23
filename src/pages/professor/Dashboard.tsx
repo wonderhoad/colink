@@ -165,28 +165,28 @@ const ProfessorDashboard = () => {
         {/* Quick Actions */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <Link to="/professor/quest-builder">
-            <Button className="w-full h-20 flex flex-col gap-2 bg-gradient-primary hover:opacity-90">
+            <Button className="w-full h-20 flex flex-col gap-2 bg-primary hover:bg-primary-hover">
               <Plus className="h-6 w-6" />
               <span>New Quest</span>
             </Button>
           </Link>
           
           <Link to="/professor/analytics">
-            <Button className="w-full h-20 flex flex-col gap-2 bg-gradient-primary hover:opacity-90">
+            <Button className="w-full h-20 flex flex-col gap-2 bg-primary hover:bg-primary-hover">
               <BarChart3 className="h-6 w-6" />
               <span>Analytics</span>
             </Button>
           </Link>
           
-          <Link to="/messaging">
-            <Button className="w-full h-20 flex flex-col gap-2 bg-gradient-primary hover:opacity-90">
+          <Link to="/shared/messaging">
+            <Button className="w-full h-20 flex flex-col gap-2 bg-primary hover:bg-primary-hover">
               <MessageSquare className="h-6 w-6" />
-              <span>Messages</span>
+              <span>Motivate Students</span>
             </Button>
           </Link>
           
           <Link to="/profile">
-            <Button className="w-full h-20 flex flex-col gap-2 bg-gradient-primary hover:opacity-90">
+            <Button className="w-full h-20 flex flex-col gap-2 bg-primary hover:bg-primary-hover">
               <Users className="h-6 w-6" />
               <span>Profile</span>
             </Button>

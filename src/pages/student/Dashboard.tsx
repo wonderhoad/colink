@@ -158,30 +158,23 @@ const StudentDashboard = () => {
         </div>
 
         {/* Quick Actions */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Link to="/student/quests">
-            <Button className="w-full h-20 flex flex-col gap-2 bg-gradient-primary hover:opacity-90">
+            <Button className="w-full h-20 flex flex-col gap-2 bg-primary hover:bg-primary-hover">
               <Target className="h-6 w-6" />
               <span>Quests</span>
             </Button>
           </Link>
           
-          <Link to="/student/color-game">
-            <Button className="w-full h-20 flex flex-col gap-2 bg-gradient-primary hover:opacity-90">
-              <Gamepad2 className="h-6 w-6" />
-              <span>Color Game</span>
-            </Button>
-          </Link>
-          
           <Link to="/student/leaderboard">
-            <Button className="w-full h-20 flex flex-col gap-2 bg-gradient-primary hover:opacity-90">
+            <Button className="w-full h-20 flex flex-col gap-2 bg-primary hover:bg-primary-hover">
               <Users className="h-6 w-6" />
               <span>Leaderboard</span>
             </Button>
           </Link>
           
           <Link to="/profile">
-            <Button className="w-full h-20 flex flex-col gap-2 bg-gradient-primary hover:opacity-90">
+            <Button className="w-full h-20 flex flex-col gap-2 bg-primary hover:bg-primary-hover">
               <Star className="h-6 w-6" />
               <span>Profile</span>
             </Button>

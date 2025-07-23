@@ -18,11 +18,11 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 210 15% 20%;
 
-    /* Coventry Blue (#003A70) as primary */
-    --primary: 210 100% 22%;
+    /* New Blue (#037ffc) as primary */
+    --primary: 207 100% 51%;
     --primary-foreground: 0 0% 100%;
-    --primary-hover: 210 100% 28%;
-    --primary-light: 210 100% 88%;
+    --primary-hover: 207 100% 45%;
+    --primary-light: 207 100% 85%;
 
     --secondary: 210 25% 96%;
     --secondary-foreground: 210 15% 20%;
@@ -43,21 +43,16 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Gamification colors */
-    --xp-bar: 210 100% 22%;
+    --xp-bar: 207 100% 51%;
     --xp-background: 210 20% 95%;
     --badge-gold: 45 90% 60%;
     --badge-silver: 0 0% 70%;
     --badge-bronze: 25 50% 45%;
 
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 22%), hsl(210 100% 35%));
-    --gradient-secondary: linear-gradient(135deg, hsl(0 0% 100%), hsl(210 20% 98%));
-    --gradient-accent: linear-gradient(135deg, hsl(210 100% 88%), hsl(210 100% 92%));
-
     /* Shadows */
-    --shadow-primary: 0 4px 20px -2px hsl(210 100% 22% / 0.15);
+    --shadow-primary: 0 4px 20px -2px hsl(207 100% 51% / 0.15);
     --shadow-card: 0 2px 10px -2px hsl(210 15% 20% / 0.1);
-    --shadow-badge: 0 8px 30px -4px hsl(210 100% 22% / 0.2);
+    --shadow-badge: 0 8px 30px -4px hsl(207 100% 51% / 0.2);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

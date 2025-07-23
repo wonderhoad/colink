@@ -1,4 +1,5 @@
 import { ArrowLeft, BarChart3, Users, Clock, TrendingUp, Download, Filter, Calendar } from "lucide-react";
+import * as XLSX from 'xlsx';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -96,6 +97,44 @@ const Analytics = () => {
     return "text-red-600";
   };
 
+  const exportToExcel = () => {
+    const wb = XLSX.utils.book_new();
+    
+    // Student data
+    const studentData = [
+      ['Name', 'XP', 'Time Spent', 'Quests Completed', 'Engagement Score', 'Avg Score'],
+      ...engagementData.map(student => [
+        student.student, 
+        student.xp, 
+        student.timeSpent, 
+        student.questsCompleted, 
+        student.engagement, 
+        student.avgScore
+      ])
+    ];
+    
+    const ws1 = XLSX.utils.aoa_to_sheet(studentData);
+    XLSX.utils.book_append_sheet(wb, ws1, 'Student Analytics');
+    
+    // Quest completion data
+    const questData = [
+      ['Quest Title', 'Completion Rate (%)', 'Avg Time', 'Avg Score (%)', 'Drop-off Rate (%)', 'Students Assigned'],
+      ...questAnalytics.map(quest => [
+        quest.title,
+        quest.completion,
+        quest.avgTime,
+        quest.avgScore,
+        quest.dropOffRate,
+        quest.students
+      ])
+    ];
+    
+    const ws2 = XLSX.utils.aoa_to_sheet(questData);
+    XLSX.utils.book_append_sheet(wb, ws2, 'Quest Analytics');
+    
+    XLSX.writeFile(wb, `analytics_${new Date().toISOString().split('T')[0]}.xlsx`);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-secondary p-6">
       <div className="max-w-7xl mx-auto space-y-6">
@@ -132,9 +171,9 @@ const Analytics = () => {
               <Filter className="h-4 w-4 mr-2" />
               Filter
             </Button>
-            <Button className="bg-gradient-primary hover:opacity-90">
+            <Button onClick={exportToExcel} className="bg-primary hover:bg-primary-hover">
               <Download className="h-4 w-4 mr-2" />
-              Export
+              Export to Excel
             </Button>
           </div>
         </div>
