@@ -26,7 +26,9 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					hover: 'hsl(var(--primary-hover))',
+					light: 'hsl(var(--primary-light))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -52,6 +54,16 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				// Gamification colors
+				xp: {
+					bar: 'hsl(var(--xp-bar))',
+					background: 'hsl(var(--xp-background))'
+				},
+				badge: {
+					gold: 'hsl(var(--badge-gold))',
+					silver: 'hsl(var(--badge-silver))',
+					bronze: 'hsl(var(--badge-bronze))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
@@ -70,25 +82,48 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
+				},
+				'xp-fill': {
+					'0%': { width: '0%' },
+					'100%': { width: 'var(--progress-width)' }
+				},
+				'badge-unlock': {
+					'0%': { transform: 'scale(0.8) rotate(-10deg)', opacity: '0' },
+					'50%': { transform: 'scale(1.1) rotate(5deg)', opacity: '1' },
+					'100%': { transform: 'scale(1) rotate(0deg)', opacity: '1' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0px)' },
+					'50%': { transform: 'translateY(-8px)' }
+				},
+				'pulse-primary': {
+					'0%, 100%': { boxShadow: '0 0 0 0 hsl(var(--primary) / 0.5)' },
+					'50%': { boxShadow: '0 0 0 8px hsl(var(--primary) / 0)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'xp-fill': 'xp-fill 1.5s ease-out forwards',
+				'badge-unlock': 'badge-unlock 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)',
+				'float': 'float 3s ease-in-out infinite',
+				'pulse-primary': 'pulse-primary 2s infinite'
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-secondary': 'var(--gradient-secondary)',
+				'gradient-accent': 'var(--gradient-accent)'
+			},
+			boxShadow: {
+				'primary': 'var(--shadow-primary)',
+				'card': 'var(--shadow-card)',
+				'badge': 'var(--shadow-badge)'
 			}
 		}
 	},
