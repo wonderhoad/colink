@@ -4,41 +4,42 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Link } from "react-router-dom";
+import BottomNavigation from "@/components/BottomNavigation";
 
 const Leaderboard = () => {
   const currentUser = "Alex Thompson";
   
   const weeklyLeaderboard = [
-    { rank: 1, name: "Maria Garcia", xp: 2450, level: 12, badges: 15, weeklyXP: 380, avatar: "MG" },
-    { rank: 2, name: "David Chen", xp: 2380, level: 11, badges: 14, weeklyXP: 360, avatar: "DC" },
-    { rank: 3, name: "Sarah Ahmed", xp: 2290, level: 11, badges: 13, weeklyXP: 340, avatar: "SA" },
+    { rank: 1, name: "Aruzhan Tolegenova", xp: 2450, level: 12, badges: 15, weeklyXP: 380, avatar: "AT" },
+    { rank: 2, name: "Yerassyl Zhaksylykov", xp: 2380, level: 11, badges: 14, weeklyXP: 360, avatar: "YZ" },
+    { rank: 3, name: "Aigerim Nurkhanova", xp: 2290, level: 11, badges: 13, weeklyXP: 340, avatar: "AN" },
     { rank: 4, name: "Alex Thompson", xp: 2250, level: 10, badges: 12, weeklyXP: 320, avatar: "AT", isCurrentUser: true },
-    { rank: 5, name: "James Wilson", xp: 2180, level: 10, badges: 11, weeklyXP: 290, avatar: "JW" },
-    { rank: 6, name: "Lisa Park", xp: 2120, level: 10, badges: 10, weeklyXP: 280, avatar: "LP" },
-    { rank: 7, name: "Mohammed Ali", xp: 2080, level: 9, badges: 10, weeklyXP: 260, avatar: "MA" },
-    { rank: 8, name: "Anna Kowalski", xp: 2020, level: 9, badges: 9, weeklyXP: 240, avatar: "AK" },
-    { rank: 9, name: "Ryan Foster", xp: 1980, level: 9, badges: 9, weeklyXP: 220, avatar: "RF" },
-    { rank: 10, name: "Emma Davis", xp: 1950, level: 9, badges: 8, weeklyXP: 200, avatar: "ED" }
+    { rank: 5, name: "Nursultan Bekturov", xp: 2180, level: 10, badges: 11, weeklyXP: 290, avatar: "NB" },
+    { rank: 6, name: "Dinara Sarsenbayeva", xp: 2120, level: 10, badges: 10, weeklyXP: 280, avatar: "DS" },
+    { rank: 7, name: "Alikhan Kudaibergenov", xp: 2080, level: 9, badges: 10, weeklyXP: 260, avatar: "AK" },
+    { rank: 8, name: "Madina Abenova", xp: 2020, level: 9, badges: 9, weeklyXP: 240, avatar: "MA" },
+    { rank: 9, name: "Dias Tursynbekov", xp: 1980, level: 9, badges: 9, weeklyXP: 220, avatar: "DT" },
+    { rank: 10, name: "Zere Aitkhozha", xp: 1950, level: 9, badges: 8, weeklyXP: 200, avatar: "ZA" }
   ];
 
   const monthlyLeaderboard = [
-    { rank: 1, name: "David Chen", xp: 2380, level: 11, badges: 14, monthlyXP: 1200, avatar: "DC" },
-    { rank: 2, name: "Maria Garcia", xp: 2450, level: 12, badges: 15, monthlyXP: 1180, avatar: "MG" },
+    { rank: 1, name: "Yerassyl Zhaksylykov", xp: 2380, level: 11, badges: 14, monthlyXP: 1200, avatar: "YZ" },
+    { rank: 2, name: "Aruzhan Tolegenova", xp: 2450, level: 12, badges: 15, monthlyXP: 1180, avatar: "AT" },
     { rank: 3, name: "Alex Thompson", xp: 2250, level: 10, badges: 12, monthlyXP: 1150, avatar: "AT", isCurrentUser: true },
-    { rank: 4, name: "Sarah Ahmed", xp: 2290, level: 11, badges: 13, monthlyXP: 1100, avatar: "SA" },
-    { rank: 5, name: "James Wilson", xp: 2180, level: 10, badges: 11, monthlyXP: 1050, avatar: "JW" },
-    { rank: 6, name: "Lisa Park", xp: 2120, level: 10, badges: 10, monthlyXP: 1000, avatar: "LP" },
-    { rank: 7, name: "Mohammed Ali", xp: 2080, level: 9, badges: 10, monthlyXP: 980, avatar: "MA" },
-    { rank: 8, name: "Anna Kowalski", xp: 2020, level: 9, badges: 9, monthlyXP: 950, avatar: "AK" },
-    { rank: 9, name: "Ryan Foster", xp: 1980, level: 9, badges: 9, monthlyXP: 920, avatar: "RF" },
-    { rank: 10, name: "Emma Davis", xp: 1950, level: 9, badges: 8, monthlyXP: 900, avatar: "ED" }
+    { rank: 4, name: "Aigerim Nurkhanova", xp: 2290, level: 11, badges: 13, monthlyXP: 1100, avatar: "AN" },
+    { rank: 5, name: "Nursultan Bekturov", xp: 2180, level: 10, badges: 11, monthlyXP: 1050, avatar: "NB" },
+    { rank: 6, name: "Dinara Sarsenbayeva", xp: 2120, level: 10, badges: 10, monthlyXP: 1000, avatar: "DS" },
+    { rank: 7, name: "Alikhan Kudaibergenov", xp: 2080, level: 9, badges: 10, monthlyXP: 980, avatar: "AK" },
+    { rank: 8, name: "Madina Abenova", xp: 2020, level: 9, badges: 9, monthlyXP: 950, avatar: "MA" },
+    { rank: 9, name: "Dias Tursynbekov", xp: 1980, level: 9, badges: 9, monthlyXP: 920, avatar: "DT" },
+    { rank: 10, name: "Timur Asylkhanov", xp: 1950, level: 9, badges: 8, monthlyXP: 900, avatar: "TA" }
   ];
 
   const facultyStats = [
-    { faculty: "Computer Science", students: 45, avgXP: 2180, topStudent: "Maria Garcia" },
-    { faculty: "Business Administration", students: 38, avgXP: 1950, topStudent: "David Chen" },
-    { faculty: "Engineering", students: 52, avgXP: 2050, topStudent: "Sarah Ahmed" },
-    { faculty: "Mathematics", students: 29, avgXP: 1890, topStudent: "Alex Thompson" }
+    { faculty: "Computer Science", students: 45, avgXP: 2180, topStudent: "Aruzhan Tolegenova" },
+    { faculty: "Business Administration", students: 38, avgXP: 1950, topStudent: "Yerassyl Zhaksylykov" },
+    { faculty: "Engineering", students: 52, avgXP: 2050, topStudent: "Aigerim Nurkhanova" },
+    { faculty: "Mathematics", students: 29, avgXP: 1890, topStudent: "Nursultan Bekturov" }
   ];
 
   const getRankIcon = (rank: number) => {
@@ -104,7 +105,7 @@ const Leaderboard = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-secondary p-6">
+    <div className="min-h-screen bg-gradient-secondary p-6 pb-24">
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
@@ -234,6 +235,14 @@ const Leaderboard = () => {
           </TabsContent>
         </Tabs>
       </div>
+      
+      <BottomNavigation 
+        userRole="student" 
+        xp={2250} 
+        level={10} 
+        coins={3} 
+        notificationCount={2} 
+      />
     </div>
   );
 };

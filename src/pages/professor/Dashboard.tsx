@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Link } from "react-router-dom";
+import BottomNavigation from "@/components/BottomNavigation";
 
 const ProfessorDashboard = () => {
   const professorData = {
@@ -32,7 +33,7 @@ const ProfessorDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-secondary p-6">
+    <div className="min-h-screen bg-gradient-secondary p-6 pb-24">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center mb-8">
@@ -163,18 +164,11 @@ const ProfessorDashboard = () => {
         </Card>
 
         {/* Quick Actions */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-2 gap-4">
           <Link to="/professor/quest-builder">
             <Button className="w-full h-20 flex flex-col gap-2 bg-primary hover:bg-primary-hover">
               <Plus className="h-6 w-6" />
               <span>New Quest</span>
-            </Button>
-          </Link>
-          
-          <Link to="/professor/analytics">
-            <Button className="w-full h-20 flex flex-col gap-2 bg-primary hover:bg-primary-hover">
-              <BarChart3 className="h-6 w-6" />
-              <span>Analytics</span>
             </Button>
           </Link>
           
@@ -184,15 +178,16 @@ const ProfessorDashboard = () => {
               <span>Motivate Students</span>
             </Button>
           </Link>
-          
-          <Link to="/profile">
-            <Button className="w-full h-20 flex flex-col gap-2 bg-primary hover:bg-primary-hover">
-              <Users className="h-6 w-6" />
-              <span>Profile</span>
-            </Button>
-          </Link>
         </div>
       </div>
+      
+      <BottomNavigation 
+        userRole="professor" 
+        xp={850} 
+        level={6} 
+        coins={8} 
+        notificationCount={3} 
+      />
     </div>
   );
 };

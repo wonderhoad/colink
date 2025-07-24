@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Link } from "react-router-dom";
+import BottomNavigation from "@/components/BottomNavigation";
 
 const StudentDashboard = () => {
   const studentData = {
@@ -30,7 +31,7 @@ const StudentDashboard = () => {
   const xpProgress = (studentData.xp / studentData.nextLevelXP) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-secondary p-6">
+    <div className="min-h-screen bg-gradient-secondary p-6 pb-24">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center mb-8">
@@ -157,30 +158,15 @@ const StudentDashboard = () => {
           </Card>
         </div>
 
-        {/* Quick Actions */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <Link to="/student/quests">
-            <Button className="w-full h-20 flex flex-col gap-2 bg-primary hover:bg-primary-hover">
-              <Target className="h-6 w-6" />
-              <span>Quests</span>
-            </Button>
-          </Link>
-          
-          <Link to="/student/leaderboard">
-            <Button className="w-full h-20 flex flex-col gap-2 bg-primary hover:bg-primary-hover">
-              <Users className="h-6 w-6" />
-              <span>Leaderboard</span>
-            </Button>
-          </Link>
-          
-          <Link to="/profile">
-            <Button className="w-full h-20 flex flex-col gap-2 bg-primary hover:bg-primary-hover">
-              <Star className="h-6 w-6" />
-              <span>Profile</span>
-            </Button>
-          </Link>
-        </div>
       </div>
+      
+      <BottomNavigation 
+        userRole="student" 
+        xp={studentData.xp} 
+        level={studentData.level} 
+        coins={3} 
+        notificationCount={5} 
+      />
     </div>
   );
 };
