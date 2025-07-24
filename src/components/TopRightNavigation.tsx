@@ -1,6 +1,7 @@
 import { Bell, Search } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useToast } from "@/hooks/use-toast";
 
 interface TopRightNavigationProps {
   userRole: 'student' | 'professor';
@@ -17,6 +18,7 @@ const TopRightNavigation = ({
   coins = 3, 
   notificationCount = 5 
 }: TopRightNavigationProps) => {
+  const { toast } = useToast();
   
   const getNotificationTitle = () => {
     const studentMessages = [
@@ -42,6 +44,14 @@ const TopRightNavigation = ({
     } else {
       return professorMessages[Math.floor(Math.random() * professorMessages.length)];
     }
+  };
+
+  const handleNotificationClick = () => {
+    const message = getNotificationTitle();
+    toast({
+      title: "🔔 Notification",
+      description: message,
+    });
   };
 
   return (
@@ -79,6 +89,7 @@ const TopRightNavigation = ({
           size="icon" 
           className="bg-background/95 backdrop-blur-sm shadow-lg hover:bg-accent"
           title={getNotificationTitle()}
+          onClick={handleNotificationClick}
         >
           <div className="relative">
             <Bell className="h-4 w-4" />
