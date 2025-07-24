@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Link } from "react-router-dom";
 import BottomNavigation from "@/components/BottomNavigation";
+import TopRightNavigation from "@/components/TopRightNavigation";
 
 const StudentDashboard = () => {
   const studentData = {
@@ -159,6 +160,14 @@ const StudentDashboard = () => {
         </div>
 
       </div>
+      
+      <TopRightNavigation 
+        userRole="student" 
+        xp={studentData.xp} 
+        level={studentData.level} 
+        coins={3} 
+        notificationCount={5} 
+      />
       
       <BottomNavigation 
         userRole="student" 
