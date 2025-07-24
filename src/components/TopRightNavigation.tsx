@@ -19,10 +19,28 @@ const TopRightNavigation = ({
 }: TopRightNavigationProps) => {
   
   const getNotificationTitle = () => {
+    const studentMessages = [
+      "New quest available! Complete Assignment #3 for 150 XP",
+      "🎉 Achievement unlocked: Study Streak Master!",
+      "📚 Reminder: Quiz #2 due in 2 hours",
+      "⚡ Bonus XP available for early submission",
+      "🏆 You're now #3 on the leaderboard!",
+      "💎 Daily login reward: +5 coins earned"
+    ];
+    
+    const professorMessages = [
+      "3 students completed your latest quest",
+      "📊 Weekly analytics report is ready",
+      "✅ 5 new submissions require grading",
+      "🎯 Quest completion rate increased by 15%",
+      "👥 New student enrolled in your course",
+      "⏰ Reminder: Schedule next week's assignments"
+    ];
+
     if (userRole === 'student') {
-      return "New quest available! Complete Assignment #3 for 150 XP";
+      return studentMessages[Math.floor(Math.random() * studentMessages.length)];
     } else {
-      return "3 students completed your latest quest";
+      return professorMessages[Math.floor(Math.random() * professorMessages.length)];
     }
   };
 
